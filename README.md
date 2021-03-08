@@ -4,3 +4,6 @@
 <p align="center">
 Telegram Bot - @KoyomiNaoBot
 </p>
+<p align="center">
+<img width="400" src="https://i.ibb.co/HGV9DWf/screenshot.png"/>
+</p>
