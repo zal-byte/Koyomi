@@ -1,5 +1,6 @@
-<center>
-  <img src="https://i.ibb.co/hsppngr/koyomi.jpg"/><br/>
-  <h1>Koyomi</h1><br/>
+<p align="center">
+  <img width="100" src="https://i.ibb.co/hsppngr/koyomi.jpg"/>
+</p>
+<p align="center">
 Telegram Bot - @KoyomiNaoBot
-</center>
+</p>
