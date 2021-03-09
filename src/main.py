@@ -1,8 +1,6 @@
 #!/usr/bin/env python
-# -/- utf-8 -/-
-
-# Made by @Eilaluth (IG/TW/FB/TL)
-
+# -*- coding: utf-8 -*-
+# https://t.me/KoyomiNaoBot
 import io
 import os
 import time
@@ -26,7 +24,7 @@ print('\n\n',
       '| $$\  $$ | $$  | $$| $$  | $$| $$  | $$| $$ | $$ | $$| $$\n',
       '| $$ \  $$|  $$$$$$/|  $$$$$$$|  $$$$$$/| $$ | $$ | $$| $$\n',
       '|__/  \__/ \______/  \____  $$ \______/ |__/ |__/ |__/|__/\n',
-      '                     /$$  | $$      @Eilaluth             \n',
+      '                     /$$  | $$     @Eilaluth - v1.1       \n',
       '                    |  $$$$$$/                            \n',
       '                     \______/                             \n')
 
@@ -47,18 +45,18 @@ def cmd_start(message):
             addLog('i', f'Welcome new user [id:{message.chat.id}]')
         except Exception as ex:
             if type(ex).__name__ == 'ConnectionError':
-                addLog('w', f'{type(ex).__name__} went wrong in cmd_start() --> SendMessages() [id:{message.chat.id}]: {str(ex)}')
-                addLog('i', 'Bot trying to resend message to user')
+                addLog('w', f'{type(ex).__name__} ada yang salah di cmd_start() --> SendMessages() [id:{message.chat.id}]: {str(ex)}')
+                addLog('i', 'Koyomi coba kirim ulang pesannya')
                 time.sleep(3)
                 SendMessages()
-            addLog('e', f'Something [{type(ex).__name__}] went wrong in cmd_start() --> SendMessages() [id:{message.chat.id}]: {str(ex)}')
+            addLog('e', f'Keknya [{type(ex).__name__}] ada yang salah di cmd_start() --> SendMessages() [id:{message.chat.id}]: {str(ex)}')
             
     def SetState():
         try:
             config.set_state(
                 message.chat.id, config.States.S_REQUEST_Media.value)
         except Exception as ex:
-            addLog('e', f'Something [{type(ex).__name__}] went wrong in cmd_start() --> SetState() [id:{message.chat.id}]: {str(ex)}')
+            addLog('e', f'Keknya [{type(ex).__name__}] ada yang salah di cmd_start() --> SetState() [id:{message.chat.id}]: {str(ex)}')
 
     SendMessages()
     SetState()
@@ -77,18 +75,18 @@ def cmd_reset(message):
             addLog('i', f'User restarted bot [id:{message.chat.id}]')
         except Exception as ex:
             if type(ex).__name__ == 'ConnectionError':
-                addLog('w', f'{type(ex).__name__} went wrong in cmd_reset() --> SendMessages() [id:{message.chat.id}]: {str(ex)}')
-                addLog('i', 'Bot trying to resend message to user')
+                addLog('w', f'{type(ex).__name__} ada yang salah di cmd_reset() --> SendMessages() [id:{message.chat.id}]: {str(ex)}')
+                addLog('i', 'Koyomi coba kirim ulang pesannya')
                 time.sleep(3)
                 SendMessages()
-            addLog('e', f'Something [{type(ex).__name__}] went wrong in cmd_reset() --> SendMessages() [id:{message.chat.id}]: {str(ex)}')
+            addLog('e', f'Keknya [{type(ex).__name__}] ada yang salah di cmd_reset() --> SendMessages() [id:{message.chat.id}]: {str(ex)}')
 
     def SetState():
         try:
             config.set_state(
                 message.chat.id, config.States.S_REQUEST_Media.value)
         except Exception as ex:
-            addLog('e', f'Something [{type(ex).__name__}] went wrong in cmd_reset() --> SetState() [id:{message.chat.id}]: {str(ex)}')
+            addLog('e', f'Keknya [{type(ex).__name__}] ada yang salah di cmd_reset() --> SetState() [id:{message.chat.id}]: {str(ex)}')
 
     SendMessages()
     SetState()
@@ -110,15 +108,15 @@ def work_with_photo(message):
 
             with open(f"media/{message.chat.id}/image.jpg", 'wb') as new_file:
                 new_file.write(downloaded_file)
-            addLog('i', f'Media downloaded for [id:{message.chat.id}]')
+            addLog('i', f'Media dah di download [id:{message.chat.id}]')
             getData()
         except Exception as ex:
             if type(ex).__name__ == 'ConnectionError':
-                addLog('w', f'{type(ex).__name__} went wrong in work_with_photo() --> getPhoto() [id:{message.chat.id}]: {str(ex)}')
-                addLog('i', 'Bot trying to resend message to user')
+                addLog('w', f'{type(ex).__name__} ada yang salah di work_with_photo() --> getPhoto() [id:{message.chat.id}]: {str(ex)}')
+                addLog('i', 'Koyomi coba kirim ulang pesannya')
                 time.sleep(3)
                 getPhoto()
-            addLog('e', f'Something [{type(ex).__name__}] went wrong in work_with_photo() --> getPhoto() [id:{message.chat.id}]: {str(ex)}')
+            addLog('e', f'Keknya [{type(ex).__name__}] ada yang salah di work_with_photo() --> getPhoto() [id:{message.chat.id}]: {str(ex)}')
     
     def getData():
         try:
@@ -130,7 +128,7 @@ def work_with_photo(message):
                     fname = os.path.join(root, f)
                     for ext in extensions:
                         if fname.lower().endswith(ext):
-                            addLog('i', f'Bot works with [{fname}]')
+                            addLog('i', f'Media di simpen di [{fname}]')
                             image = Image.open(fname)
                             image = image.convert('RGB')
                             image.thumbnail(thumbSize, resample=Image.ANTIALIAS)
@@ -143,10 +141,10 @@ def work_with_photo(message):
 
                             processResults = True
                             r = requests.post(url, files=files)
-                            addLog('i', f'[id:{message.chat.id}] got the result')
+                            addLog('i', f'[id:{message.chat.id}] dapet result')
                             sendResults(message, r.json())
         except Exception as ex:
-            addLog('e', f'Something [{type(ex).__name__}] went wrong in getData() [id:{message.chat.id}]: {str(ex)}')
+            addLog('e', f'Keknya [{type(ex).__name__}] ada yang salah di getData() [id:{message.chat.id}]: {str(ex)}')
 
     def sendResults(message, result):
         try:
@@ -206,11 +204,11 @@ def work_with_photo(message):
                     result_similarity = result['results'][i - 1]['header']['similarity']
                 except:
                     result_similarity = ''
-                 
+                
                 try:
                     message_text = ''
                     if result_name != '':
-                        message_text = message_text + f'<b>{result_name}</b>\n\n'
+                        message_text = message_text + f"<b>Title:</b> <a href='{result_url}'>{result_name}</a>\n"
                     if result_part != '':
                         message_text = message_text + f'<b>Part:</b> {result_part}\n'
                     if result_year != '':
@@ -219,11 +217,6 @@ def work_with_photo(message):
                         message_text = message_text + f'<b>Time:</b> {result_time}\n'
                     if result_similarity != '':
                         message_text = message_text + f'<b>Similarity:</b> {result_similarity}%\n\n'
-                    if result_url != '':
-                        if 'anidb' in result_url.lower():
-                            message_text = message_text + f'<a href="{result_url}"><b>Anidb</b></a>'
-                        else:
-                            message_text = message_text + f'<a href="{result_url}"><b>sauce</b></a>'
                     if result_similarity < '80':
                         message_text = 'Maaf Kak, Koyomi Ngak Tau Sauce Nya Apa...\nPastiin Yang Di Kirim Itu Gambar 2d Dan Ngak Di Crop Ya Kak!'
                 except:
@@ -232,28 +225,28 @@ def work_with_photo(message):
                 def send_result():
                     try:
                         bot.send_message(message.chat.id, message_text, parse_mode='HTML')
-                        addLog('i', f'Result sent to user [id:{message.chat.id}].\nName: "{result_name}, Similarity: {result_similarity}%"')
+                        addLog('i', f'Result dah dikirim ke [id:{message.chat.id}] Similarity: {result_similarity}%"')
                     except Exception as ex:
                         if type(ex).__name__ == 'ConnectionError':
-                            addLog('w', f'{type(ex).__name__} went wrong in sendResults() --> send_result() [id:{message.chat.id}]: {str(ex)}')
-                            addLog('i', 'Bot trying to resend message to user')
+                            addLog('w', f'{type(ex).__name__} ada yang salah di sendResults() --> send_result() [id:{message.chat.id}]: {str(ex)}')
+                            addLog('i', 'Koyomi coba kirim ulang pesannya')
                             time.sleep(3)
                             send_result()
-                        addLog('e', f'User does not get results because something [{type(ex).__name__}] went wrong in sendResults() --> send_result(): {ex}')
+                        addLog('e', f'User ngak dapet result karna keknya [{type(ex).__name__}] ada yang salah di sendResults() --> send_result(): {ex}')
                 
                 send_result()
                 i = i + 1
             clearTemp()
         except Exception as ex:
-            addLog('e', f'Something [{type(ex).__name__}] went wrong in sendResults() [id:{message.chat.id}]: {str(ex)}')
+            addLog('e', f'Keknya [{type(ex).__name__}] ada yang salah di sendResults() [id:{message.chat.id}]: {str(ex)}')
 
     def clearTemp():
         try:
             if os.path.isdir(f'media/{message.chat.id}'):
                 shutil.rmtree(f'media/{message.chat.id}')
-                addLog('i', f'[./media/{message.chat.id}/] folder has been removed')
+                addLog('i', f'[./media/{message.chat.id}/] folder dah di apus')
         except Exception as ex:
-            addLog('e', f'Something [{type(ex).__name__}] went wrong in clearTemp() [id:{message.chat.id}]: {str(ex)}')
+            addLog('e', f'keknya [{type(ex).__name__}] ada yang salah di clearTemp() [id:{message.chat.id}]: {str(ex)}')
     
     getPhoto()
 
@@ -311,7 +304,7 @@ def addLog(type, text):
               '| ' + log_message)
         logging.warning(log_message)
     elif type == 'i':  # INFO
-        log_message = f'[Bot] [Info] {text}'
+        log_message = f'[Koyomi] [Info] {text}'
         print(datetime.now().strftime("%d-%m-%Y %H:%M:%S"),
               '| ' + log_message)
         logging.info(log_message)
@@ -336,7 +329,7 @@ def create_table(type_of_table):
             conn.commit()
             conn.close()
         except Exception as ex:
-                addLog('e', f'Something [{type(ex).__name__}] went wrong in create_table(): {str(ex)}')
+                addLog('e', f'Keknya [{type(ex).__name__}] ada yang salah di create_table(): {str(ex)}')
 
     if type_of_table == 'states':
         create_table_states()
@@ -352,5 +345,5 @@ if __name__ == '__main__':
         try:
             bot.polling(none_stop=True)
         except Exception as ex:
-            addLog('e', f'Something [{type(ex).__name__}] went wrong in bot.polling(): {str(ex)}')
+            addLog('e', f'Keknya [{type(ex).__name__}] ada yang salah di bot.polling(): {str(ex)}')
             time.sleep(5)
