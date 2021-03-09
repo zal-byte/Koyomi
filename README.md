@@ -5,5 +5,5 @@
 Telegram Bot - @KoyomiNaoBot
 </p>
 <p align="center">
-<img width="400" src="https://i.ibb.co/HGV9DWf/screenshot.png"/>
+<img width="400" src="https://i.ibb.co/XV5SScq/screenshot.png"/>
 </p>
