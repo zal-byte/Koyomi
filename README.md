@@ -3,9 +3,9 @@
 </p>
 <p align="center">
 Telegram Bot - @KoyomiNaoBot<br/>
-<p>
+</p>
   <details>
-<summary>🥟 Help me!</summary>
+    <p align="center"><summary>Help me!</summary></p>
  
  # Installation
  ## Ubuntu/Debian
