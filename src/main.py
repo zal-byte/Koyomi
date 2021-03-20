@@ -217,7 +217,7 @@ def work_with_photo(message):
                         message_text = message_text + f'<b>Time:</b> {result_time}\n'
                     if result_similarity != '':
                         message_text = message_text + f'<b>Similarity:</b> {result_similarity}%\n\n'
-                    if result_similarity < '80':
+                    if result_similarity < '{config.minsim}':
                         message_text = 'Maaf Kak, Koyomi Ngak Tau Sauce Nya Apa...\nPastiin Yang Di Kirim Itu Gambar 2d Dan Ngak Di Crop Ya Kak!'
                 except:
                     x = 0
