@@ -5,7 +5,7 @@
 Telegram Bot - @KoyomiNaoBot<br/>
 </p>
   <details>
-    <p align="center"><summary>Help me!</summary></p>
+    <summary>Help me!</summary>
  
  # Installation
  ## Ubuntu/Debian
