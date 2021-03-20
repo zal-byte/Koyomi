@@ -27,4 +27,16 @@ Telegram Bot - @KoyomiNaoBot<br/>
  > python main.py
  ```
 </details>
-
+<details>
+    <summary>Read !</summary>
+<br/>
+  
+```python
+  tgBotToken = '--' // your telegram bot token from bot father
+  api_key = "--" // your saucenao apikey
+  output_type = '2' // 1 is XML 2 is JSON
+  numres = 1 // number of results requested
+  minsim ='70!' // minimal similarity
+  dbmask = 8589938016 // mask for selecting specific indexes
+```
+</details>
