@@ -7,11 +7,11 @@ Telegram Bot - @KoyomiNaoBot<br/>
  <h1>Installation</h1>
  <h2>Ubuntu/Debian</h2>
   <code>
-    sudo apt-get install git python3 pip-python3
-    git clone https://github.com/Eilaluth/Koyomi
-    cd Koyomi
-    cd src
-    pip3 install -r requirements.txt
+    sudo apt-get install git python3 pip-python3<br/>
+    git clone https://github.com/Eilaluth/Koyomi<br/>
+    cd Koyomi<br/>
+    cd src<br/>
+    pip3 install -r requirements.txt<br/>
     python3 main.py
   </code>
  <h2>Windows (Chocolatey)</h2>
