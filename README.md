@@ -40,3 +40,4 @@ Telegram Bot - @KoyomiNaoBot<br/>
   dbmask = 8589938016 // mask for selecting specific indexes
 ```
 </details>
+<p align='center'><img src="https://i.ibb.co/NxZJffd/image-17.png" border="0"/></p>
